@@ -38,11 +38,19 @@ const resolvers = {
 
             return { token, user };
         },
-        saveBook: async (parent, args, context) => {
+        saveBook: async (parent, {content}, context) => {
             if (context.user) {
+                const { 
+                    authors,
+                    bookId,
+                    description,
+                    title,
+                    image,
+                    link
+                } = content;
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $push: { saveBooks: { args } } },
+                    { $push: { savedBooks: { authors, bookId, description, title, image, link } } },
                     { new: true, runValidators: true }
                 );
 
