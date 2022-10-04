@@ -29,7 +29,7 @@ Screenshot of the login/sign up modal.
 Screenshot of the saved books page.
 
 ## Test
-Therea re no tests for this application.
+There are no tests for this application.
 
 ## Credits
 Made by Andrew Kim
